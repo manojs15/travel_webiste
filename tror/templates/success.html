@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Success{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Booking Successful!</h2>
+    <p>Your travel booking order has been successfully submitted.</p>
+    <p>Thank you for choosing us!</p>
+</div>
+
+{% block extracss %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles5.css' %}">
+{% endblock %}
+
+{% endblock %}

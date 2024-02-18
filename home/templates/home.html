@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Home Page Title{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <style>
+        /* Internal CSS for the top navigation */
+        ul.top-nav {
+            display: flex;
+            justify-content: flex-end;
+            list-style-type: none; 
+            padding: 0; 
+            background-color: #E1F0DA;
+        }
+
+        ul.top-nav li {
+            margin-left: 20px; /* Add spacing between links */
+        }
+
+        ul.top-nav li a {
+            text-decoration: none; /* Remove underline */
+            color: #333; /* Set link color */
+            font-weight: bold; /* Make text bold */
+            font-size: 16px; /* Set font size */
+        }
+
+        ul.top-nav li a:hover {
+            color: #666; /* Change color on hover */
+        }
+
+        h2 {
+            text-align: center; /* Center-align the text */
+        }
+
+        p{
+            text-align: center; /* Center-align the text */
+        }
+
+        .slideshow {
+            text-align: center; /* Center-align the content */
+        }
+        
+        .content-container {
+            background-color: #E1F0DA; 
+            padding:0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin:0; /* Add margin at the bottom to create separation */
+        }
+        
+      
+    </style>
+
+    <div class="content-container">
+        <h2>Welcome to the Home Page</h2>
+        <p>This is the content of the home page.</p>
+    </div>
+    
+
+    <!-- Navigation links aligned to the top right -->
+    <ul class="top-nav">
+        <li><a href="">Home</a></li>
+        <li><a href="{% url 'tror:order' %}">Order</a></li>
+        <li><a href="{% url 'test:testi' %}">Testimonials</a></li>
+    </ul>
+
+    <div class="slideshow">
+        <div class="slide">
+            <img src="{% static 'img1.jpg' %}" alt="Slide 1">
+        </div>
+        <div class="slide">
+            <img src="{% static 'img2.jpg' %}" alt="Slide 2">
+        </div>
+        <div class="slide">
+            <img src="{% static 'img3.jpg' %}" alt="Slide 3">
+        </div>
+    </div>
+
+    <p>This is some additional content in the middle of the page.</p>
+{% endblock %}

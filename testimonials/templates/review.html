@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Testimonials{% endblock %}             
+
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    <h2>Testimonials</h2>
+    <div class="testimonial">
+        <div class="testimonial-author">
+            <img src="{% static 'images/avatar1.jpg' %}" alt="User Avatar">
+            <p>John Doe</p>
+        </div>
+        <div class="testimonial-content">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
+        </div>
+    </div>
+    <div class="testimonial">
+        <div class="testimonial-author">
+            <img src="{% static 'images/avatar2.jpg' %}" alt="User Avatar">
+            <p>Jane Smith</p>
+        </div>
+        <div class="testimonial-content">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+        </div>
+    </div>
+    <!-- Add more testimonials as needed -->
+</div>
+
+    {% block extracss %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles6.css' %}">
+    {% endblock %}
+
+{% endblock %}

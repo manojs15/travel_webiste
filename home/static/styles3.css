@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c42626;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Slideshow styles */
+.slideshow {
+    margin-top: 20px;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Additional content styles */
+.additional-content {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+/* Apply flexbox to the ul element */
+ul {
+    display: flex; /* Use flexbox */
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+/* Style each list item */
+ul li {
+    margin-right: 20px; /* Add space between each link */
+}
+
+/* Style the links */
+ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Set link color */
+    font-weight: bold; /* Make text bold */
+    font-size: 16px; /* Set font size */
+}
+
+/* Optionally, add hover effect on links */
+ul li a:hover {
+    color: #666; /* Change color on hover */
+}

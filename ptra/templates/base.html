@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}your trvl{% endblock %}</title>
+    <style>
+        /* Global styles */
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #F1FADA;
+            color: #333;
+            line-height: 1.6;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Make body height occupy entire viewport */
+            position: relative; /* Position for the website name */
+        }
+
+        main {
+            flex: 1; /* Allow main content to grow to fill remaining space */
+            padding-top:80px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* CSS for the footer */
+        footer {
+            background-color: #9195F6;
+            color: #070F2B;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        .login-signup-box {
+            margin: 100px;
+            cursor: pointer;
+            width: 500px; /* Set the width of your box */
+            height: 200px;
+        }
+        .login-box {
+            width: 400px;
+            height: 100px;
+            background-color: #B784B7;
+            border: 1px solid #db6363;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 100px;
+            transition: background-color 10.0s;
+            margin-left:250px;
+        }
+
+        .login-box:hover h2 {
+            color: #FEFBF6; /* Change the text color to red when hovering */
+            /* or */
+            background-color: #86A789; /* Change the background color to yellow when hovering */
+        }
+
+        .login-box h2 {
+            font-size: 24px; /* Example font size */
+            color: #333;
+            margin:0;
+            
+          }
+        
+          /* Styling for the website name */
+        .website-name {
+            position: absolute;
+            top: 20px; /* Adjust top position as needed */
+            left: 20px; /* Adjust left position as needed */
+            font-size: 40px;
+            font-weight: 700;
+            color: #333;
+            z-index: 999; /* Ensure the website name appears above other content */
+            font-style: normal;
+            font-family: "Dancing Script", cursive;
+            font-optical-sizing: auto;
+        }
+          
+    </style>
+</head>
+<body>
+
+     <!-- Website name -->
+     <div class="website-name">TripWeGo</div>
+
+    <!-- Main content area -->
+    <main>
+        <!-- This is where the content of child templates will be inserted -->
+        {% block content %}
+        <div class="login-signup-box">
+            <!-- Login form -->
+            <div class="login-box" onclick="window.location.href='{% url 'accounts:log' %}'">
+                <h2 style="cursor: pointer;">Login</h2>
+            </div>
+        </div>
+
+        <div class="login-signup-box">
+            <!-- Login form -->
+            <div class="login-box" onclick="window.location.href='{% url 'accounts:signup' %}'">
+                <h2 style="cursor: pointer;">signup</h2>
+            </div>
+        </div>  
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+            <p>Designed with <span style="color: red;">❤</span> by You</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Travel Booking Order{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h2>Travel Booking Order Form</h2>
+    <form method="post" action="{% url 'tror:success' %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="form-group">
+            <label for="id_total_people">Total Number of People:</label>
+            {{ form.total_people }}
+            {{ form.total_people.errors }}
+        </div>
+        <div class="form-group">
+            <label for="id_vehicle_type">Vehicle Type:</label>
+            {{ form.vehicle_type }}
+            {{ form.vehicle_type.errors }}
+        </div>
+        <div class="form-group">
+            <label for="id_seat_capacity">Number of Seats:</label>
+            {{ form.seat_capacity }}
+            {{ form.seat_capacity.errors }}
+        </div>
+        <div class="form-group">
+            <label for="id_start_date">Starting Date:</label>
+            {{ form.start_date }}
+            {{ form.start_date.errors }}
+        </div>
+        <div class="form-group">
+            <label for="id_end_date">Ending Date:</label>
+            {{ form.end_date }}
+            {{ form.end_date.errors }}
+        </div>
+        <div class="form-group">
+            <label for="id_places_to_visit">Trip Places to Visit:</label>
+            {{ form.places_to_visit }}
+            {{ form.places_to_visit.errors }}
+        </div>
+        <button type="submit">Submit Order</button>
+    </form>
+</div>
+{% endblock %}

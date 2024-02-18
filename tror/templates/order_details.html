@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Travel Order Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Travel Order Details</h2>
+    <p><strong>Total Number of People:</strong> {{ order.total_people }}</p>
+    <p><strong>Vehicle Type:</strong> {{ order.vehicle_type }}</p>
+    <p><strong>Number of Seats:</strong> {{ order.seat_capacity }}</p>
+    <p><strong>Starting Date:</strong> {{ order.start_date }}</p>
+    <p><strong>Ending Date:</strong> {{ order.end_date }}</p>
+    <p><strong>Places to Visit:</strong> {{ order.places_to_visit }}</p>
+</div>
+{% endblock %}
