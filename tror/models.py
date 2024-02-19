@@ -8,6 +8,7 @@ class TravelBooking(models.Model):
     end_date = models.DateField()
     places_to_visit = models.TextField()
     phone_number = models.BigIntegerField()  # Storing phone number as a complete integer
-
+    completed = models.BooleanField(default=False) 
+    
     def __str__(self):
         return f"Booking for {self.total_people} people - {self.vehicle_type}"

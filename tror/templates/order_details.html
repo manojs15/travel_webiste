@@ -1,16 +1,47 @@
+<!-- order_details.html -->
+
 {% extends 'base.html' %}
 
-{% block title %}Travel Order Details{% endblock %}
+{% block title %}Order Details{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h2>Travel Order Details</h2>
-    <p><strong>Total Number of People:</strong> {{ order.total_people }}</p>
-    <p><strong>Vehicle Type:</strong> {{ order.vehicle_type }}</p>
-    <p><strong>Number of Seats:</strong> {{ order.seat_capacity }}</p>
-    <p><strong>Starting Date:</strong> {{ order.start_date }}</p>
-    <p><strong>Ending Date:</strong> {{ order.end_date }}</p>
-    <p><strong>Places to Visit:</strong> {{ order.places_to_visit }}</p>
-    <p><strong>Phone Number:</strong> {{ order.phone_number }}</p>
+    <h2>Order Details</h2>
+    <form id="order-form" method="POST" action="{% url 'tror:update_order' %}">
+        {% csrf_token %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Completed</th>
+                    <th>Total Number of People</th>
+                    <th>Vehicle Type</th>
+                    <th>Number of Seats</th>
+                    <th>Starting Date</th>
+                    <th>Ending Date</th>
+                    <th>Places to Visit</th>
+                    <th>Phone Number</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><input type="checkbox" name="completed_orders" value="{{ order.id }}" {% if order.completed %}checked{% endif %}></td>
+                    <td>{{ order.total_people }}</td>
+                    <td>{{ order.vehicle_type }}</td>
+                    <td>{{ order.seat_capacity }}</td>
+                    <td>{{ order.start_date }}</td>
+                    <td>{{ order.end_date }}</td>
+                    <td>{{ order.places_to_visit }}</td>
+                    <td>{{ order.phone_number }}</td>
+                    <td>
+                        <button type="submit" name="delete_order" value="{{ order.id }}">Delete</button>
+                    </td>               
+                 </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">update Orders</button>
+    </form>
 </div>
 {% endblock %}
